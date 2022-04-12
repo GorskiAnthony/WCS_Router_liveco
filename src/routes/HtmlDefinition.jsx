@@ -1,13 +1,51 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Links from "../components/Links";
 
 const HtmlDefinition = () => {
+
+	const subMenu = [
+		{
+			name:"Body",
+			route:"/html/body"
+		},
+		{
+			name:"Header",
+			route:"/html/header"
+		},
+		{
+			name:"Footer",
+			route:"/html/footer"
+		},
+		{
+			name:"a",
+			route:"/html/a"
+		},
+		{
+			name:"bold",
+			route:"/html/bold"
+		},
+		{
+			name:"div",
+			route:"/html/div"
+		},
+		{
+			name:"html",
+			route:"/html/html"
+		},
+		{
+			name:"section",
+			route:"/html/section"
+		}
+	]
+
 	return (
 		<div>
 			Html definition
-			<Link to="/html/body">Body</Link>
-			<Link to="/html/header">Header</Link>
-			<Link to="/html/footer">Footer</Link>
+			{
+				subMenu.map((item, index) => {
+					return <Links key={index} name={item.name} route={item.route} />
+				})
+			}
 		</div>
 	);
 };
